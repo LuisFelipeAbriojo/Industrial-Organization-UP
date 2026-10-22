@@ -1,0 +1,216 @@
+== Antes (2011) ==
+x_VW_2011                                   1.5226
+x_Porsche_2011                              1.6019
+x_pool_2011                                 1.5275
+x_ventas_2011                               1.5277
+w_T (peso costo Porsche)                    0.0612
+pi_T (peso ventas Porsche)                  0.0642
+Termino w_T(x_T - x_A)                      0.0049
+x_pool - x_A (verificación identidad)       0.0049
+w_A x_A + w_T x_T (verificación)            1.5275
+Sesgo frontera ln x_pool - ln x_A           0.0032
+Sesgo agregación ln x_pool - ln x_ventas   -0.0002
+
+== Δ ln(Q/M) por especificación ==
+ post  x_post  solo_adquirente  consolidacion_virtual  virtual_pesos_ventas
+ 2013  1.5501           0.0179                 0.0148                0.0146
+ 2014  1.5278           0.0034                 0.0002                0.0001
+
+== Sensibilidad ventas intragrupo ==
+ post  proporcion_intragrupo_2013  eliminacion_supuesta_meur  x_pool_ajustado_2011  consolidacion_virtual_ajustada
+ 2013                      0.0803                   877.9930                1.5316                          0.0120
+ 2014                      0.0803                   877.9930                1.5316                         -0.0025
+
+== Sensibilidad MAN (observado) ==
+            escenario  post  x_MAN_post  solo_adquirente_sin_MAN  consolidacion_virtual_sin_MAN
+   observado (MAN SE)  2013      1.7961                   0.0084                         0.0050
+   observado (MAN SE)  2014      1.8068                  -0.0059                        -0.0093
+hipotético x_MAN=1.30  2013      1.3000                   0.0320                         0.0290
+hipotético x_MAN=1.30  2014      1.3000                   0.0139                         0.0109
+hipotético x_MAN=1.50  2013      1.5000                   0.0206                         0.0174
+hipotético x_MAN=1.50  2014      1.5000                   0.0046                         0.0014
+hipotético x_MAN=1.70  2013      1.7000                   0.0120                         0.0087
+hipotético x_MAN=1.70  2014      1.7000                  -0.0025                        -0.0058
+hipotético x_MAN=1.90  2013      1.9000                   0.0053                         0.0019
+hipotético x_MAN=1.90  2014      1.9000                  -0.0080                        -0.0114
+
+== Ilustración Proposición 1 (TFPR, beta NACE 29 del paper) ==
+s_K                       0.9217
+s_L                       0.9674
+s_M                       0.9388
+a                         0.9476
+b                         0.0782
+a+b                       1.0258
+rendimientos (bk+bl+bm)   0.8840
+r = Z_T/Z_A               0.8306
+umbral r* = (1-a)/b       0.6702
+sesgo TFPR ln(a + r b)    0.0125
+   beta_m * x_VW_2011 = 0.591  (nivel no interpretable como markup: solo usamos cambios)
+
+== Contexto: ingresos / costo de ventas VW ==
+anio
+2009   1.1482
+2010   1.2034
+2011   1.2129
+2012   1.2232
+2013   1.2206
+2014   1.2201
+
+== Consolidación virtual con ajustes acumulados ==
+ post  virtual  virtual_sin_MAN  virtual_sin_MAN_ni_intragrupo
+ 2013   0.0148           0.0050                         0.0022
+ 2014   0.0002          -0.0093                        -0.0120
+  figura -> analisis/figuras/fig1_proxy_markup_vw_porsche.png
+  figura -> analisis/figuras/fig2_especificaciones_markup.png
+  figura -> analisis/figuras/fig3_ajustes_perimetro.png
+
+=== A. Datos semana 9: socios simétricos: P = 150 - Q, costos [30, 30, 45], se fusionan 1 y 2 ===
+Pre-fusión:  q = [33.75 33.75 18.75], Q = 86.25, P = 63.75, pi = [1139.06 1139.06  351.56], EC = 3719.53, W = 6349.22
+Post sin sinergias (c_M = 30): P = 75.00, pi_M = 2025.00 vs pi_1+pi_2 = 2278.12, W = 5737.50
+Umbral precio/EC (Farrell-Shapiro): c_M <= -3.75  -> INALCANZABLE (costo negativo)
+Umbral bienestar total (Williamson): c_M <= 21.30
+Umbral rentabilidad para las partes: c_M <= 25.91
+
+=== B. Socio grande eficiente + socio pequeño: P = 150 - Q, costos [30, 50, 30, 30], se fusionan 1 y 2 ===
+Pre-fusión:  q = [28.  8. 28. 28.], Q = 92.00, P = 58.00, pi = [784.  64. 784. 784.], EC = 4232.00, W = 6648.00
+Post sin sinergias (c_M = 30): P = 60.00, pi_M = 900.00 vs pi_1+pi_2 = 848.00, W = 6750.00
+Umbral precio/EC (Farrell-Shapiro): c_M <= 22.00
+Umbral bienestar total (Williamson): c_M <= 30.00
+Umbral rentabilidad para las partes: c_M <= 30.00
+  figura -> analisis/figuras/fig4_cournot_umbral.png
+== Livianos ==
+ anio  total  share_VW_marca_%  share_grupo_VW_%  share_top4_marcas_%  HHI_marca_min  HHI_marca_max  HHI_grupo_min  HHI_grupo_max  share_otros_%
+ 2020 112181              3.70               NaN                46.61         784.89         787.73         973.68         976.53           8.61
+ 2021 157100              4.02               NaN                45.18         759.57         764.76         917.52         922.72           7.94
+ 2022 159814              3.44              3.89                46.60         790.88         795.36         978.50         981.83           7.44
+ 2023 164485              2.58              3.21                47.04         833.15         838.94        1009.08        1013.23           8.13
+ 2024 151062              1.94              2.54                45.73         798.39         803.54         979.62         983.22           8.49
+ 2025 186981              1.97              2.43                45.26         769.93         774.58         947.71         950.95           6.95
+
+== Lujo ==
+ anio  total  HHI_marca  HHI_grupo  share_grupo_VW_%  dHHI_propiedad_comun_VW  dHHI_Audi_Porsche  share_Audi_%  share_Porsche_%  share_BMW_Group_%  share_Mercedes_%
+ 2022   3059    1991.46    2333.75             23.57                    96.16              80.95         21.35             1.90              31.87             23.24
+ 2023   3770    1887.52    2481.87             27.24                   187.75             176.27         23.24             3.79              35.38             18.65
+ 2024   3848    1807.16    2254.15             23.52                   168.62             156.50         19.18             4.08              32.54             20.19
+ 2025   3930    1815.29    2301.76             22.19                   162.77             148.28         17.66             4.20              35.04             19.64
+
+== Lerner ilustrativo L = HHI/epsilon (Cournot, semana 11) ==
+ epsilon_supuesta  L_livianos_2025 (HHI grupo min)  L_lujo_2025 (HHI grupo)
+             1.50                             0.06                     0.15
+             3.00                             0.03                     0.08
+             5.00                             0.02                     0.05
+  figura -> analisis/figuras/fig5_peru_share_vw.png
+  figura -> analisis/figuras/fig6_peru_lujo_2025.png
+  figura -> analisis/figuras/fig7_peru_hhi.png
+OK  Tabla A1 VW 2009: «| VW | 2009 | 105 187 | 67 925 |» en informe
+OK  Tabla A1 Q/M VW 2009: «| 1.549 |» en informe
+OK  Tabla A1 VW 2010: «| VW | 2010 | 126 875 | 79 394 |» en informe
+OK  Tabla A1 Q/M VW 2010: «| 1.598 |» en informe
+OK  Tabla A1 VW 2011: «| VW | 2011 | 159 337 | 104 648 |» en informe
+OK  Tabla A1 Q/M VW 2011: «| 1.523 |» en informe
+OK  Tabla A1 VW 2012: «| VW | 2012 | 192 676 | 122 450 |» en informe
+OK  Tabla A1 Q/M VW 2012: «| 1.574 |» en informe
+OK  Tabla A1 VW 2013: «| VW | 2013 | 197 007 | 127 089 |» en informe
+OK  Tabla A1 Q/M VW 2013: «| 1.550 |» en informe
+OK  Tabla A1 VW 2014: «| VW | 2014 | 202 458 | 132 514 |» en informe
+OK  Tabla A1 Q/M VW 2014: «| 1.528 |» en informe
+OK  Tabla A1 Porsche AG 2011: «| Porsche AG | 2011 | 10 928 | 6 822 |» en informe
+OK  Tabla A1 Q/M Porsche AG 2011: «| 1.602 |» en informe
+OK  Tabla A1 Porsche AG 2012: «| Porsche AG | 2012 | 13 865 | 8 124 |» en informe
+OK  Tabla A1 Q/M Porsche AG 2012: «| 1.707 |» en informe
+OK  Tabla A1 Porsche AG 2013: «| Porsche AG | 2013 | 14 326 | 8 282 |» en informe
+OK  Tabla A1 Q/M Porsche AG 2013: «| 1.730 |» en informe
+OK  Tabla A1 Porsche AG 2014: «| Porsche AG | 2014 | 17 205 | 10 405 |» en informe
+OK  Tabla A1 Q/M Porsche AG 2014: «| 1.654 |» en informe
+OK  x_VW_2011: «1.5226» en informe
+OK  x_Porsche_2011: «1.6019» en informe
+OK  x_pool_2011: «1.5275» en informe
+OK  x_ventas_2011: «1.5277» en informe
+OK  w_T: «w_T = 6.1 %» en informe
+OK  pi_T: «π_T = 6.4 %» en informe
+OK  Porsche vs VW %: «5.2 % más alto» en informe
+OK  término w_T(x_T-x_A): «+0.0049» en informe
+OK  sesgo frontera: «+0.32 puntos log» en informe, slides
+OK  sesgo agregación: «−0.02 puntos log» en informe
+OK  solo_adquirente 2013: «| +1.79» en informe
+OK  consolidacion_virtual 2013: «| +1.48» en informe
+OK  virtual_pesos_ventas 2013: «| +1.46» en informe
+OK  solo_adquirente 2014: «| +0.34» en informe
+OK  consolidacion_virtual 2014: «| +0.02» en informe
+OK  virtual_pesos_ventas 2014: «| +0.01» en informe
+OK  intragrupo 2013: «**+1.2 %**» en informe
+OK  intragrupo 2014: «**−0.25 %**» en informe
+OK  proporción intragrupo: «8 %» en informe
+OK  sin MAN 2013: «**+0.50 %**» en informe
+OK  sin MAN 2014: «**−0.93 %**» en informe
+OK  sin MAN ni intragrupo 2013: «**+0.22 %**» en informe
+OK  sin MAN ni intragrupo 2014: «**−1.20 %**» en informe
+OK  MAN Q/M 2011: «1.77 en 2011» en informe
+OK  MAN Q/M 2013: «1.80 en 2013» en informe
+OK  caída VW 2010-2011: «−4.8 %» en informe, slides
+OK  Porsche Q/M 2011→2013: «de 1.60 (2011) a 1.73 (2013)» en informe
+OK  β_m * x_VW: «0.59 < 1» en informe
+OK  TFPR sesgo: «+1.25 puntos log» en informe
+OK  TFPR r: «r = 0.83» en informe
+OK  TFPR r*: «r* = 0.67» en informe
+OK  TFPR a+b: «| a + b | 1.026 |» en informe
+OK  Cournot A P_pre: «63.75» en informe
+OK  Cournot A umbral precio: «−3.75» en informe
+OK  Cournot A umbral W: «c_M ≤ 21.3» en informe
+OK  Cournot A umbral rentabilidad: «c_M ≤ 25.91» en informe
+OK  Cournot B umbral precio: «c_M ≤ 22» en informe
+OK  Cournot B reducción: «27 %» en informe
+OK  Cournot A reducción W: «29 %» en informe
+OK  livianos total 2020: «112 181» en informe
+OK  share VW marca 2020: «3.70 %» en informe
+OK  HHI marca 2020: «785–788» en informe
+OK  HHI grupo 2020: «974–977» en informe
+OK  livianos total 2021: «157 100» en informe
+OK  share VW marca 2021: «4.02 %» en informe
+OK  HHI marca 2021: «760–765» en informe
+OK  HHI grupo 2021: «918–923» en informe
+OK  livianos total 2022: «159 814» en informe
+OK  share VW marca 2022: «3.44 %» en informe
+OK  HHI marca 2022: «791–795» en informe
+OK  HHI grupo 2022: «978–982» en informe
+OK  livianos total 2023: «164 485» en informe
+OK  share VW marca 2023: «2.58 %» en informe
+OK  HHI marca 2023: «833–839» en informe
+OK  HHI grupo 2023: «1 009–1 013» en informe
+OK  livianos total 2024: «151 062» en informe
+OK  share VW marca 2024: «1.94 %» en informe
+OK  HHI marca 2024: «798–804» en informe
+OK  HHI grupo 2024: «980–983» en informe
+OK  livianos total 2025: «186 981» en informe
+OK  share VW marca 2025: «1.97 %» en informe
+OK  HHI marca 2025: «770–775» en informe
+OK  HHI grupo 2025: «948–951» en informe
+OK  grupo VW livianos 2025: «2.4 %» en informe, slides
+OK  grupo VW livianos 2022: «3.9 %» en informe
+OK  top 4 marcas: «45 %» en informe
+OK  lujo HHI marca 2022: «| 1 991 |» en informe
+OK  lujo HHI grupo 2022: «| 2 334 |» en informe
+OK  lujo ΔHHI 2022: «| 96 |» en informe
+OK  lujo HHI marca 2023: «| 1 888 |» en informe
+OK  lujo HHI grupo 2023: «| 2 482 |» en informe
+OK  lujo ΔHHI 2023: «| 188 |» en informe
+OK  lujo HHI marca 2024: «| 1 807 |» en informe
+OK  lujo HHI grupo 2024: «| 2 254 |» en informe
+OK  lujo ΔHHI 2024: «| 169 |» en informe
+OK  lujo HHI marca 2025: «| 1 815 |» en informe
+OK  lujo HHI grupo 2025: «| 2 302 |» en informe
+OK  lujo ΔHHI 2025: «| 163 |» en informe
+OK  lujo grupo VW 2025: «22.2 %» en informe, slides, preguntas
+OK  lujo BMW Group 2025: «35.0 %» en informe
+OK  ΔHHI Audi-Porsche 2025: «148» en informe, slides, preguntas
+OK  lujo 2025 BMW: «29.6 %» en informe
+OK  lujo 2025 Mercedes-Benz: «19.6 %» en informe
+OK  lujo 2025 Audi: «17.7 %» en informe
+OK  lujo 2025 Volvo: «10.5 %» en informe
+OK  lujo 2025 Lexus: «8.5 %» en informe
+OK  lujo 2025 Mini: «5.5 %» en informe
+OK  lujo 2025 Porsche: «4.2 %» en informe
+OK  Lerner lujo rango: «entre 0.05 y 0.15» en informe
+OK  Lerner livianos rango: «entre 0.02 y 0.06» en informe
+
+Todas las cifras verificadas coinciden.
