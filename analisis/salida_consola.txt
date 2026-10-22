@@ -1,0 +1,99 @@
+== Antes (2011) ==
+x_VW_2011                                   1.5226
+x_Porsche_2011                              1.6019
+x_pool_2011                                 1.5275
+x_ventas_2011                               1.5277
+w_T (peso costo Porsche)                    0.0612
+pi_T (peso ventas Porsche)                  0.0642
+Termino w_T(x_T - x_A)                      0.0049
+x_pool - x_A (verificación identidad)       0.0049
+w_A x_A + w_T x_T (verificación)            1.5275
+Sesgo frontera ln x_pool - ln x_A           0.0032
+Sesgo agregación ln x_pool - ln x_ventas   -0.0002
+
+== Δ ln(Q/M) por especificación ==
+ post  x_post  solo_adquirente  consolidacion_virtual  virtual_pesos_ventas
+ 2013  1.5501           0.0179                 0.0148                0.0146
+ 2014  1.5278           0.0034                 0.0002                0.0001
+
+== Sensibilidad ventas intragrupo ==
+ post  proporcion_intragrupo_2013  eliminacion_supuesta_meur  x_pool_ajustado_2011  consolidacion_virtual_ajustada
+ 2013                      0.0803                   877.9930                1.5316                          0.0120
+ 2014                      0.0803                   877.9930                1.5316                         -0.0025
+
+== Sensibilidad MAN (HIPOTÉTICO: falta data/man.csv) ==
+            escenario  post  solo_adquirente_sin_MAN  consolidacion_virtual_sin_MAN
+hipotético x_MAN=1.30  2013                   0.0320                         0.0290
+hipotético x_MAN=1.30  2014                   0.0139                         0.0109
+hipotético x_MAN=1.40  2013                   0.0259                         0.0227
+hipotético x_MAN=1.40  2014                   0.0089                         0.0058
+hipotético x_MAN=1.50  2013                   0.0206                         0.0174
+hipotético x_MAN=1.50  2014                   0.0046                         0.0014
+hipotético x_MAN=1.60  2013                   0.0160                         0.0127
+hipotético x_MAN=1.60  2014                   0.0008                        -0.0025
+hipotético x_MAN=1.70  2013                   0.0120                         0.0087
+hipotético x_MAN=1.70  2014                  -0.0025                        -0.0058
+
+== Ilustración Proposición 1 (TFPR, beta NACE 29 del paper) ==
+s_K                       0.9217
+s_L                       0.9674
+s_M                       0.9388
+a                         0.9476
+b                         0.0782
+a+b                       1.0258
+rendimientos (bk+bl+bm)   0.8840
+r = Z_T/Z_A               0.8306
+umbral r* = (1-a)/b       0.6702
+sesgo TFPR ln(a + r b)    0.0125
+   beta_m * x_VW_2011 = 0.591  (nivel no interpretable como markup: solo usamos cambios)
+
+== Contexto: ingresos / costo de ventas VW ==
+anio
+2009   1.1482
+2010   1.2034
+2011   1.2129
+2012   1.2232
+2013   1.2206
+2014   1.2201
+  figura -> analisis/figuras/fig1_proxy_markup_vw_porsche.png
+  figura -> analisis/figuras/fig2_especificaciones_markup.png
+  figura -> analisis/figuras/fig3_sensibilidad_man.png
+
+=== A. Datos semana 9: socios simétricos: P = 150 - Q, costos [30, 30, 45], se fusionan 1 y 2 ===
+Pre-fusión:  q = [33.75 33.75 18.75], Q = 86.25, P = 63.75, pi = [1139.06 1139.06  351.56], EC = 3719.53, W = 6349.22
+Post sin sinergias (c_M = 30): P = 75.00, pi_M = 2025.00 vs pi_1+pi_2 = 2278.12, W = 5737.50
+Umbral precio/EC (Farrell-Shapiro): c_M <= -3.75  -> INALCANZABLE (costo negativo)
+Umbral bienestar total (Williamson): c_M <= 21.30
+Umbral rentabilidad para las partes: c_M <= 25.91
+
+=== B. Socio grande eficiente + socio pequeño: P = 150 - Q, costos [30, 50, 30, 30], se fusionan 1 y 2 ===
+Pre-fusión:  q = [28.  8. 28. 28.], Q = 92.00, P = 58.00, pi = [784.  64. 784. 784.], EC = 4232.00, W = 6648.00
+Post sin sinergias (c_M = 30): P = 60.00, pi_M = 900.00 vs pi_1+pi_2 = 848.00, W = 6750.00
+Umbral precio/EC (Farrell-Shapiro): c_M <= 22.00
+Umbral bienestar total (Williamson): c_M <= 30.00
+Umbral rentabilidad para las partes: c_M <= 30.00
+  figura -> analisis/figuras/fig4_cournot_umbral.png
+== Livianos ==
+ anio  total  share_VW_marca_%  share_grupo_VW_%  share_top4_marcas_%  HHI_marca_min  HHI_marca_max  HHI_grupo_min  HHI_grupo_max  share_otros_%
+ 2020 112181              3.70               NaN                46.61         784.89         787.73         973.68         976.53           8.61
+ 2021 157100              4.02               NaN                45.18         759.57         764.76         917.52         922.72           7.94
+ 2022 159814              3.44              3.89                46.60         790.88         795.36         978.50         981.83           7.44
+ 2023 164485              2.58              3.21                47.04         833.15         838.94        1009.08        1013.23           8.13
+ 2024 151062              1.94              2.54                45.73         798.39         803.54         979.62         983.22           8.49
+ 2025 186981              1.97              2.43                45.26         769.93         774.58         947.71         950.95           6.95
+
+== Lujo ==
+ anio  total  HHI_marca  HHI_grupo  share_grupo_VW_%  dHHI_propiedad_comun_VW  dHHI_Audi_Porsche  share_Audi_%  share_Porsche_%  share_BMW_Group_%  share_Mercedes_%
+ 2022   3059    1991.46    2333.75             23.57                    96.16              80.95         21.35             1.90              31.87             23.24
+ 2023   3770    1887.52    2481.87             27.24                   187.75             176.27         23.24             3.79              35.38             18.65
+ 2024   3848    1807.16    2254.15             23.52                   168.62             156.50         19.18             4.08              32.54             20.19
+ 2025   3930    1815.29    2301.76             22.19                   162.77             148.28         17.66             4.20              35.04             19.64
+
+== Lerner ilustrativo L = HHI/epsilon (Cournot, semana 11) ==
+ epsilon_supuesta  L_livianos_2025 (HHI grupo min)  L_lujo_2025 (HHI grupo)
+             1.50                             0.06                     0.15
+             3.00                             0.03                     0.08
+             5.00                             0.02                     0.05
+  figura -> analisis/figuras/fig5_peru_share_vw.png
+  figura -> analisis/figuras/fig6_peru_lujo_2025.png
+  figura -> analisis/figuras/fig7_peru_hhi.png

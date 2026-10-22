@@ -1,0 +1,12 @@
+,valor
+x_VW_2011,1.5225995718981729
+x_Porsche_2011,1.601876282615069
+x_pool_2011,1.5274513321970036
+x_ventas_2011,1.52768773384992
+w_T (peso costo Porsche),0.06120032295684938
+pi_T (peso ventas Porsche),0.06418230405544298
+Termino w_T(x_T - x_A),0.004851760298830765
+x_pool - x_A (verificación identidad),0.004851760298830721
+w_A x_A + w_T x_T (verificación),1.5274513321970036
+Sesgo frontera ln x_pool - ln x_A,0.003181431748943364
+Sesgo agregación ln x_pool - ln x_ventas,-0.00015475672188897116

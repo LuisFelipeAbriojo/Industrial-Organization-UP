@@ -1,0 +1,3 @@
+escenario,a,costos,P_pre,P_post_sin_sinergias,umbral_precio,umbral_bienestar,umbral_rentabilidad,reduccion_necesaria_precio_%
+A. Datos semana 9: socios simétricos,150,"[30, 30, 45]",63.75,75.0,-3.75,21.30047928788518,25.905438404862064,112.5
+B. Socio grande eficiente + socio pequeño,150,"[30, 50, 30, 30]",58.0,60.0,22.0,30.0,30.0,26.66666666666667
