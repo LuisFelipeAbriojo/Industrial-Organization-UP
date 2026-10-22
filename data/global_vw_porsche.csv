@@ -1,0 +1,11 @@
+entidad,anio,ingresos_meur,costo_materiales_meur,costo_ventas_meur,empleados,activos_totales_meur,unidades,tipo_unidades,perimetro_nota,fuente_id
+VW_Grupo,2009,105187,67925,91608,367000,177178,6310000,vehicle_sales,"Sin Porsche AG (at equity desde dic-2009), sin MAN; Scania consolidada desde jul-2008",VW_AR2012_p189
+VW_Grupo,2010,126875,79394,105431,389000,199393,7278000,vehicle_sales,"Sin Porsche AG (at equity), sin MAN",VW_AR2014_p143
+VW_Grupo,2011,159337,104648,131371,454000,253769,8361000,vehicle_sales,"Incluye Porsche Holding Salzburg desde 1-mar-2011 y MAN desde 9-nov-2011; Porsche AG at equity",VW_AR2014_p143
+VW_Grupo,2012,192676,122450,157522,533000,309518,9345000,vehicle_sales,"Incluye MAN todo el año y Porsche AG desde 1-ago-2012 (5 meses); cifras reexpresadas IAS 19R",VW_AR2014_p143
+VW_Grupo,2013,197007,127089,161407,563000,324333,9728000,vehicle_sales,"Primer año completo con Porsche AG y MAN",VW_AR2014_p143
+VW_Grupo,2014,202458,132514,165934,583000,351209,10217000,vehicle_sales,"Porsche AG y MAN todo el año",VW_AR2014_p143
+Porsche_AG,2011,10928,6822,,15307,21556,118868,deliveries,"Grupo Porsche AG (IFRS propio, sin PPA de VW); empleados al 31-dic",PAG_AR2013_p130
+Porsche_AG,2012,13865,8124,9755,17502,22747,141075,deliveries,"Año completo de Porsche AG (ene-jul independiente, ago-dic dentro de VW); costo de ventas reexpresado",PAG_AR2013_p130;PAG_AR2013_p117
+Porsche_AG,2013,14326,8282,10139,19456,24560,162145,deliveries,"Dentro de VW todo el año",PAG_AR2014_p65;PAG_AR2013_p117
+Porsche_AG,2014,17205,10405,12885,22401,26060,189849,deliveries,"Dentro de VW todo el año",PAG_AR2014_p65;PAG_AR2014_p60
