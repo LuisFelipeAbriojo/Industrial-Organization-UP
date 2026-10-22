@@ -1,24 +1,28 @@
 # Pendientes y verificaciones abiertas
 
-Se actualiza en cada fase. Última actualización: Fase 1 (22-oct-2026).
+Última actualización: Fase 4 (22-oct-2026). Todos los scripts se volvieron a correr desde cero (`bash analisis/correr_todo.sh`) y las **110 cifras** que revisa `analisis/verificar_informe.py` coinciden con el informe, el guion y las preguntas.
 
-## Archivos que debe descargar el grupo
+## 1. Lo que no pudimos verificar o es aproximado (decirlo si preguntan)
 
-1. **MAN SE, Annual Report 2011** y **MAN SE, Annual Report 2013** (de ser posible, también 2014), en inglés.
-   - Dónde: https://www.corporate.man.eu/en/investor-relations/ (sección *Publications / Annual reports*, archivo). Si ya no están ahí, buscar en https://www.traton.com, porque MAN SE pertenece hoy a TRATON.
-   - Qué se necesita: *Sales revenue*, *Cost of materials* (en las notas al estado de resultados o en el estado de valor agregado) y empleados del **grupo MAN**, para 2011 y 2013.
-   - Para qué: quitar a MAN del perímetro de VW. Se consolidó el 9-nov-2011, así que pesa unos 2 meses en 2011 y el año completo en 2013.
-   - Dónde guardarlos: `fuentes/MAN_AnnualReport_2011.pdf`, `fuentes/MAN_AnnualReport_2013.pdf`.
-   - Motivo: el servidor rechaza las descargas automáticas desde este entorno.
+| Tema | Situación | Dónde se usa |
+|---|---|---|
+| Costo de materiales de **MAN para nov–dic 2011** | VW no lo publica. Se aproxima aplicando a los ingresos de MAN dentro de VW en 2011 (€2 652 M) la razón Q/M anual de MAN SE en 2011 (1.77). | Informe c.4 (3); figura 3 |
+| **Ventas intragrupo de Porsche en 2011** | No se publican. Se asume la misma proporción observada en 2013 (8.0 % de los ingresos de Porsche). Es una sensibilidad, no un dato. | Informe c.4 (4); figura 3 |
+| **Costo de materiales de Porsche AG 2009–2010 y costo de ventas 2011** | No encontramos fuente pública: Porsche AG estuvo en método de participación entre dic-2009 y jul-2012. Por eso el "antes" es solo 2011. | Informe c.2 |
+| **Empleados** | VW reporta promedio anual; Porsche AG reporta empleados al 31 de diciembre. Solo afecta la ilustración de TFPR (Anexo B). | Anexo B |
+| **Elasticidades β** | Son las de NACE 29 estimadas por Hess y Wang para España (Tabla B.1), no para VW. Solo se usan como ilustración (TFPR) y para mostrar que el nivel del markup no es interpretable. | c.4 (5) y (6); Anexo B |
+| **Grupos propietarios fuera de VW** (Hyundai–Kia, Toyota–Lexus, BMW–Mini, Geely–Volvo, Stellantis, JLR) | Se tomaron de conocimiento general y no se verificaron en fuente primaria (ver `data/grupos_propietarios.csv`, columna `verificado`). Afectan el HHI "por grupo". El HHI por marca no depende de esto. | Tabla A2; figuras 6–7 |
+| **Definición de "segmento de lujo" de la AAP** | La AAP no explica qué marcas incluye ni con qué criterio. No es un mercado relevante en sentido antimonopolio. | c.5 |
+| **SEAT y Cupra en el Perú** | Están dentro de "Otros" en livianos, así que la participación del Grupo VW en livianos es una **cota inferior**. | c.5; Tabla A2 |
+| **Contratos de Euromotors** (exclusividad, territorios, precios) | No hay información pública. La sección c.6 es interpretación teórica, y el informe lo dice. | c.6 |
+| **Inicio del régimen de la Ley 31112** (14-jun-2021, D.S. 039-2021-PCM) | Viene de fuentes secundarias; el texto de la ley solo dice "15 días calendario después de la adecuación normativa". No se usa en el informe. | `data/fuentes.md` |
+| **ARAPER** | El sitio no respondió (error 502). Se usó solo la AAP, con los mismos datos de SUNARP. | — |
+| **Referencias académicas de la bibliografía** (Williamson 1968; Farrell y Shapiro 1990; Salant, Switzer y Reynolds 1983; De Loecker y Warzynski 2012; Syverson 2019; Tirole 1988; Merger Guidelines 2023) | Citadas de memoria: revisar volumen y páginas antes de entregar. Los datos del paper de Hess y Wang sí se verificaron contra el PDF. | Bibliografía |
 
-## Datos que no existen en fuente pública (hasta donde buscamos)
+## 2. Antes de entregar (grupo)
 
-- **Costo de materiales y costo de ventas de Porsche AG en 2009–2010** (año calendario). Porsche SE dejó de consolidarla el 7-dic-2009 y Porsche AG no publicó reporte propio para esos años, o no lo encontramos. Por eso el "antes" del ejercicio es **2011**.
-- **Costo de ventas de Porsche AG en 2011.** No aparece en las tablas de KPI. El análisis con costo de ventas empieza en 2012.
-- **Lujo por marca 2020–2021** en Perú: la AAP solo publica totales por carrocería para esos años.
-- **Unidades de SEAT, Cupra y Škoda en Perú**: quedan dentro de "Otros" en la tabla de livianos (fuera del top 25) y no figuran en el segmento de lujo.
-
-## Por verificar
-
-- Inicio efectivo del régimen de la Ley 31112 (14-jun-2021, con el D.S. 039-2021-PCM): viene de fuentes secundarias; falta verificarlo en El Peruano.
-- Unidades: VW reporta *vehicle sales* y Porsche AG reporta *deliveries*. No son idénticos; solo se usan como contexto.
+1. **Extensión.** El cuerpo del informe (secciones a–d, con las tablas de c.3) tiene unas 4 200 palabras. En Word, con Calibri 11 e interlineado sencillo, debería quedar en unas 7.5–8 páginas. Si se pasa, recortar primero c.4 (6) (TFPR) y el detalle de c.6. El Anexo B y el C ya están fuera del cuerpo.
+2. **Pasar a Word/PDF** e insertar las figuras de `analisis/figuras/` donde el texto las menciona, o como anexo.
+3. **Armar el PowerPoint** con `informe/slides_outline.md` (6 slides).
+4. **Repartir y ensayar** `informe/preguntas_probables.md`: cada integrante debe poder responder todas.
+5. **GitHub:** el push a `claude/youthful-brahmagupta-bwtxf8` falló con error 403 (la app de Claude no tiene acceso al repositorio). Los commits están hechos localmente. Hay que reconectar GitHub en https://claude.ai/connect-github y volver a hacer push. El repositorio es **público**: el material del curso (slides y lineamientos) está excluido en `.gitignore`.

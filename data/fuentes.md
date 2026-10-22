@@ -57,6 +57,31 @@ Páginas usadas:
 
 **Qué entidad publicaba las cifras operativas de Porsche antes de 2012.** Hasta el ejercicio 2008/09 (que cerraba el 31 de julio), Porsche AG estaba consolidada en Porsche SE. Desde el 7-dic-2009, ni Porsche SE ni VW la consolidan: ambas la registran por el método de participación, y solo publican ingresos, resultado operativo y unidades del grupo Porsche Zwischenholding, sin costo de materiales. La única fuente pública que encontramos con el **costo de materiales de 2011** es la tabla de KPI del reporte anual 2013 de Porsche AG.
 
+## 3b. MAN SE (enlaces proporcionados por el grupo)
+
+| ID | Documento | URL | Archivo |
+|---|---|---|---|
+| MAN_AR2011 | MAN SE, *Annual Report 2011* | https://irpages2.eqs.com/Download/Companies/MAN/Annual%20Reports/DE0005937007-JA-2011-EQ-E-00.pdf | `fuentes/MAN_AnnualReport_2011.pdf` |
+| MAN_AR2013 | MAN SE, *Annual Report 2013* | https://irpages2.eqs.com/Download/Companies/MAN/Annual%20Reports/DE0005937007-JA-2013-EQ-E-00.pdf | `fuentes/MAN_AnnualReport_2013.pdf` |
+| MAN_AR2014 | MAN SE, *Annual Report 2014* (mismo patrón de URL) | https://irpages2.eqs.com/Download/Companies/MAN/Annual%20Reports/DE0005937007-JA-2014-EQ-E-00.pdf | `fuentes/MAN_AnnualReport_2014.pdf` |
+
+Páginas usadas:
+
+- **MAN_AR2011 p.128** (estado de resultados): ingresos 2011 €16 472 M. **p.148** (nota 12, *Cost of materials*): costo de materiales 2011 €9 314 M.
+- **MAN_AR2013 p.136**: ingresos 2013 €15 664 M, según el reporte 2013. **p.161**: costo de materiales 2013 €8 831 M.
+- **MAN_AR2014 p.207** (revisión plurianual): ingresos 2014 €14 286 M y 2013 €15 861 M (reexpresado, igual que en la tabla por marcas de VW). **p.145**: costo de materiales 2014 €7 907 M y 2013 €8 831 M.
+- Para 2013 y 2014 se usan las cifras del reporte 2014, coherentes con VW. Para los ~2 meses de MAN dentro de VW en 2011, se usan los ingresos que reporta VW (€2 652 M, VW_AR2012 p.109) y el costo de materiales se aproxima con la razón Q/M anual de MAN en 2011 (1.7685).
+
+## 3c. Otras páginas citadas
+
+- **PSE_AR0809 p.152**: entre el 16-sep-2008 y el 5-ene-2009 Porsche SE elevó su participación en VW; desde el 5-ene-2009 tiene la mayoría de los votos y consolida a VW (IAS 27).
+- **PSE_AR2011 p.71**: cooperación con Volkswagen en compras conjuntas de materiales.
+- **VW_AR2012 p.269**: adquisición de KPI Polska, "exclusive importer and distributor of various Volkswagen Group brands in Poland".
+- **VW_AR2008**: sección de información exigida por la ley de adquisiciones, que cita la VW-Gesetz y sus límites a los derechos de voto.
+- **L31112, art. 6.2.a**: no son operaciones de concentración sometidas a la ley las realizadas "exclusivamente al interior del mismo grupo económico".
+- **HW, Tabla B.1**: elasticidades NACE 29, producción bruta: β_k = 0.267, β_l = 0.229, β_m = 0.388.
+- **S11, slide 62**: umbrales de las Merger Guidelines 2023 (HHI > 1 800 y ΔHHI > 100; participación > 30 % y ΔHHI > 100).
+
 ## 4. Perú
 
 | ID | Documento | URL | Archivo |
@@ -84,5 +109,5 @@ Notas:
 
 ## 5. Fuentes que no se pudieron descargar
 
-- **MAN SE, reportes anuales 2011 y 2013 (y 2014).** `corporate.man.eu` rechaza las descargas automáticas y `epaper.man.eu` corta la conexión. Se necesitan para quitar a MAN del perímetro de VW. Debe descargarlos el grupo (ver `informe/pendientes.md`).
+- MAN SE: resuelto con los enlaces de EQS que proporcionó el grupo (sección 3b).
 - **ARAPER (`araper.pe`)**: el sitio no respondió (error 502 del gateway). Usamos solo la AAP, que publica las mismas inscripciones SUNARP.

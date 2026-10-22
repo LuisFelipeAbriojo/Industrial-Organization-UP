@@ -1,0 +1,4 @@
+anio,ingresos_meur,costo_materiales_meur,fuente_id
+2011,16472,9314,MAN_AR2011_p128;MAN_AR2011_p148
+2013,15861,8831,MAN_AR2014_p207;MAN_AR2014_p145 (ingresos 2013 reexpresados en el reporte 2014; reporte 2013 decía 15664: MAN_AR2013_p136)
+2014,14286,7907,MAN_AR2014_p207;MAN_AR2014_p145

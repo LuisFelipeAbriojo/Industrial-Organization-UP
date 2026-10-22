@@ -6,3 +6,4 @@ rm -rf resultados figuras
 python3 consolidacion_porsche.py
 python3 cournot_fusion.py
 python3 peru_concentracion.py
+python3 verificar_informe.py
